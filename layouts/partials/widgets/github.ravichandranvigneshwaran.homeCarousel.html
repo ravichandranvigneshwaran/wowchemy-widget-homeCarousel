@@ -1,11 +1,9 @@
 {{ $page := .root }}
 {{ $section := .page }}
 
-{{$section.Params.fbFeed}}
-
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
-      {{ range $index, $section.Params.fbFeed := (seq 5) }}
+      {{ range $index, $section.Params.fbFeed}}
       <li data-target="#carouselExampleIndicators" data-slide-to="{{$index}}" {{ if eq $index 0 }}class="active"{{ end }} ></li>
       {{ end }}
     </ol>
