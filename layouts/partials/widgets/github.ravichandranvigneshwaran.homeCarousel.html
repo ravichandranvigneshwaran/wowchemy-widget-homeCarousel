@@ -12,7 +12,7 @@
       <div class="carousel-item {{ if eq $index 0 }}class= active {{ end }}">
         <div class="fb-post" 
           data-href="{{$value}}"
-          data-width="700"></div></div>
+          data-width="700"></div>
       </div>
       {{ end }}
     </div>
@@ -25,9 +25,11 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
+  <script async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2"></script>
 <script>
   window.sectionData = '{{ $section.Params }}';
   window.pageData ='{{ $page.Params }}';
   console.log(window.sectionData);
   console.log(window.pageData);
+
 </script>
