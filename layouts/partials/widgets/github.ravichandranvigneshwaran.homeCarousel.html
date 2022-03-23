@@ -9,7 +9,7 @@
     </ol>
     <div class="carousel-inner">
       {{ range $index, $value := $section.Params.fbFeed}}
-      <div class="carousel-item {{ if eq $index 0 }}class= active {{ end }}">
+      <div class="carousel-item {{ if eq $index 0 }} active {{ end }}">
         <div class="fb-post" 
           data-href="{{$value}}"
           data-height="500"></div>
