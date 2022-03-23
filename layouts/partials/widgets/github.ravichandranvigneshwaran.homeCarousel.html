@@ -3,7 +3,7 @@
 
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
-      {{ range $index, $section.Params.fbFeed}}
+      {{ range $index, $value := $section.Params.fbFeed}}
       <li data-target="#carouselExampleIndicators" data-slide-to="{{$index}}" {{ if eq $index 0 }}class="active"{{ end }} ></li>
       {{ end }}
     </ol>
