@@ -27,3 +27,9 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
+<script>
+  window.sectionData = '{{ $section.Params }}';
+  window.pageData ='{{ $page.Params }}';
+  console.log(window.sectionData);
+  console.log(window.pageData);
+</script>
