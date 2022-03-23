@@ -31,7 +31,11 @@
      
       {{ end }}
     </div>
-
+    <ol class="carousel-indicators">
+      {{ range $index, $value := $section.Params.fbFeed}}
+      <li data-target="#carouselExampleIndicators" data-slide-to="{{$index}}" {{ if eq $index 0 }}class="active"{{ end }} ></li>
+      {{ end }}
+    </ol>
     
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -43,11 +47,7 @@
     </a>
 
   </div>
-  <ol class="carousel-indicators">
-    {{ range $index, $value := $section.Params.fbFeed}}
-    <li data-target="#carouselExampleIndicators" data-slide-to="{{$index}}" {{ if eq $index 0 }}class="active"{{ end }} ></li>
-    {{ end }}
-  </ol>
+ 
   <script async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2"></script>
 <script>
   window.sectionData = '{{ $section.Params }}';
