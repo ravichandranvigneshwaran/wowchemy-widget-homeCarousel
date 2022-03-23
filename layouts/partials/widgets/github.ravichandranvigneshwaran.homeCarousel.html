@@ -2,8 +2,13 @@
 {{ $section := .page }}
 
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-    
+  <ol class="carousel-indicators">
+    {{ range $index, $value := $section.Params.fbFeed}}
+    <li data-target="#carouselExampleIndicators" data-slide-to="{{$index}}" {{ if eq $index 0 }}class="active"{{ end }} ></li>
+    {{ end }}
+  </ol>
     <div class="carousel-inner">
+      
       {{ range $index, $value := $section.Params.fbFeed}}
       <div class="d-flex justify-content-center">
       <div class="carousel-item {{ if eq $index 0 }} active {{ end }}">
@@ -14,11 +19,6 @@
         </div>
       </div>
       {{ end }}
-      <ol class="carousel-indicators">
-        {{ range $index, $value := $section.Params.fbFeed}}
-        <li data-target="#carouselExampleIndicators" data-slide-to="{{$index}}" {{ if eq $index 0 }}class="active"{{ end }} ></li>
-        {{ end }}
-      </ol>
     </div>
     
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
