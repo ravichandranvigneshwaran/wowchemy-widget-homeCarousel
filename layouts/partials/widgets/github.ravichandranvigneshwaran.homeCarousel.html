@@ -7,18 +7,20 @@
     <li data-target="#carouselExampleIndicators" data-slide-to="{{$index}}" {{ if eq $index 0 }}class="active"{{ end }} ></li>
     {{ end }}
   </ol>
+  <div class="d-flex justify-content-center">
     <div class="carousel-inner">
       
       {{ range $index, $value := $section.Params.fbFeed}}
-      <div class="d-flex justify-content-center">
+      
       <div class="carousel-item {{ if eq $index 0 }} active {{ end }}">
         <div class="fb-post" 
           data-href="{{$value}}"
           data-height="300"
           data-width="300"></div>
         </div>
-      </div>
+     
       {{ end }}
+    </div>
     </div>
     
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
